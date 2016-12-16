@@ -1520,6 +1520,14 @@ p {
     list-style-type: none;
 }
 
+.breadcrumb {
+    background-color: #fff !important;
+}
+
+.breadcrumb a{
+    text-decoration: none;
+}
+
 .catalog ul a{
     color: #000;
 }
