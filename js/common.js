@@ -96,7 +96,7 @@ $('.navbar-nav a, .top, .bottomBtn').mPageScroll2id({
 /*carousel*/
 $(".carousel").owlCarousel({
 		loop : true,
-		autoplay:false,
+		autoplay:true,
     	autoplayTimeout:3000,
     	paginationSpeed : 3000,
     	goToFirstSpeed : 3000,
