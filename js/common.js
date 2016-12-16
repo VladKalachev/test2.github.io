@@ -116,6 +116,12 @@ $(".carousel").owlCarousel({
 
 	/*gallery*/
 
+$('.test-popup-link').magnificPopup({
+  type: 'image'
+  // other options
+});
+
+
 $('.popupImg').magnificPopup({
   type: 'image'
   // other options

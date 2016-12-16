@@ -748,7 +748,7 @@ form input, form textarea {
     font-size: 18px;
 }
 .color_element {
-    color: #E40404;
+    color: #ffce3c;
 }
 
 form .form-group {
@@ -785,13 +785,46 @@ form .form-group {
     font-family: "RobotoBold", sans-serif;
 }
 form button {
-        background-color: #9B1818;
+    background-color: #ffce3c;
     letter-spacing: 2px;
 }
 
-/* section {
-    padding: 70px 0 90px;
-} */
+.add_order {
+    
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    height: 46px;
+    line-height: 46px;
+    padding: 0 32px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: "RobotoBold", sans-serif;
+    background-color: #ffce3c;
+    letter-spacing: 2px; 
+    margin-top: 10px;
+
+}
+.add_order:hover {
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    height: 46px;
+    line-height: 46px;
+    padding: 0 32px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: "RobotoBold", sans-serif;
+    background-color: #ffce3c !important ;
+    letter-spacing: 2px;
+
+}
 
 /* footer */
 
