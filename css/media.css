@@ -1,0 +1,148 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	.s_tizers .row > div {
+			text-align: center;
+		}
+	.tiz_descr {
+		display: block;
+		margin-top: 10px;
+	}
+
+
+
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.profi_item:last-child {
+		margin-bottom: 30px;
+	}
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.top_phone, .logo, .top_header h1, .top_header h2 {
+		text-align: center;
+	}
+
+	.logo {
+		margin-bottom: 20px;
+	}
+	.top_phone .tab_item {
+		font-size: 30px;
+	}
+	.top_header {
+		position: relative;
+		top: 20px;
+	}
+	.tabs_header {
+		position: relative;
+		bottom: -20px;
+	}
+	.s_conracts h2 {
+		margin-bottom: 20px;
+	}
+}
+
+
+@media only screen and (max-width : 600px) {
+	.profi_item {
+		width: 100%;
+		text-align: center;
+	}
+	.s_profi h2 {
+		line-height: 40px;
+	}
+
+
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	.top_header {
+		margin-top: 30px;
+		position: relative;
+		bottom: -100px;
+	}
+	.top_header h1 {
+		font-size: 50px;
+		line-height: 50px;
+	}
+
+	.top_header h2 {
+		font-size: 28px;
+	}
+	.tabs_header .tabs .tab {
+		font-size: 12px;
+		padding: 10px 15px;
+	}
+	.button_wrap {
+		text-align: center;
+	}
+	.s_conracts .tabs .tab {
+		padding: 0 20px
+	}
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+	.top_phone .tab_item {
+		font-size: 25px;
+	} 
+	.tabs_header {
+		position: relative;
+		bottom: -15px;
+	}
+	
+
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+ /* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+
+ /* Large Devices, Wide Screens */
+@media (min-height: 720px) and (min-width : 1200px) {
+	.tabs_header {
+		position: relative;
+		bottom: -200px;
+	}
+	.tabs_header > div {
+		width:  100%
+	}
+	.top_header {
+		position: relative;
+		top: 80px;
+	}
+}
