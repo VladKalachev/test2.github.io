@@ -15,7 +15,7 @@ if ($(window).width() > 768) {
 /*popup*/
 
 	$('.mypopup-close').click(function(){
-		console.log(111);
+		
 		$('.mypopup').css('display','none');
 		
 	});
@@ -87,7 +87,7 @@ $(window).scroll(function(){
 /*scrolle */
 
 $('.navbar-nav a, .top, .bottomBtn').mPageScroll2id({
-    offset: 80
+    offset: 70
 });
 
 

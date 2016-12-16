@@ -1770,9 +1770,6 @@ hr {
     border-radius: 50%;
 }
 
-.mPS2id-highlight {
-	color: #ccc !important;	
-}
 
 .top.mPS2id-highlight {
 	display: none;
@@ -1807,9 +1804,7 @@ a.redClass {
     top: 600px;
 }
 
-a.bottomBtn:visited {
-	color: #fff;
-}
+
 
 .bottomBtn .glyphicon {
     margin-top: 20px;
@@ -1826,6 +1821,11 @@ a.bottomBtn:hover {
 	display: block;
 }
 
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #000 !important;
+}
+
 .glyphicon-menu-down:before {
 	color: #fff;
 }
@@ -1836,9 +1836,7 @@ a.bottomBtn:hover {
 a.top{
     color: #fff;
 }
-a.top:visited {
-     color: #beaa73;
-}
+
 a.top:active {
      color: #beaa73;
 }
