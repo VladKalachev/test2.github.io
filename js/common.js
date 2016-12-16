@@ -1,69 +1,155 @@
 $(document).ready(function() {
 
+/*hover*/
+
+if ($(window).width() > 768) {
+	$('ul.nav li.dropdown').hover(function() {
+	  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+	}, function() {
+	  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+	});
+}
 
 
-	$(window).stellar( {
-		responsive: true,
-		horizontalOffset: 60
+
+/*popup*/
+
+	$('.mypopup-close').click(function(){
+		console.log(111);
+		$('.mypopup').css('display','none');
+		
 	});
 
-	$(".carousel").owlCarousel({
+
+	/*height page1*/
+	
+
+	var he1 = $(window).height(),
+	    he2 = he1 - 200,
+	    he3 = he1/2 - 220,
+	    he4 = he1/2 - 150,
+	    he5 = he1/2 - 0,
+	    w1 = $(window).width()
+	    w2 = w1/2;
+//console.log(w2);
+
+	//$('.owl-nav div').css('top', he1);
+	$('.header1').css('height', he1);
+	$('.review_item1 img').css('height', he1);
+	$('.review_item2 img').css('height', he1);
+	$('.review_item3 img').css('height', he1);
+	//console.log(he1);
+	
+	
+	$('.logo').css('top', he3);
+	$('.review_item1 h4').css('top', he4);
+	$('.review_item1 p').css('top', he5);
+
+	if (w1 < 1500) {
+		$('.crt-parallaxvideo video').css('height', he1);
+
+	}
+	
+     
+	if ($(window).scrollTop() >= 0 ) {
+		$('.top').addClass('mPS2id-highlight');
+	};
+
+	if ($(window).scrollTop() >= 620) {
+	$('.top').removeClass('mPS2id-highlight');
+	}
+
+	if (w1 < 700) {
+		$('.header_name').css('left', w2-140);
+
+	}
+
+
+
+
+
+$(window).scroll(function(){ 
+
+	if ($(window).scrollTop() >= 0 ) {
+		$('.top').addClass('mPS2id-highlight');
+		$('.bottomBtn').removeClass('mPS2id-highlight');
+	};
+
+	if ($(window).scrollTop() >= 620) {
+		$('.top').removeClass('mPS2id-highlight');
+	$('.bottomBtn').addClass('mPS2id-highlight');
+	}
+
+
+});
+
+
+/*scrolle */
+
+$('.navbar-nav a, .top, .bottomBtn').mPageScroll2id({
+    offset: 80
+});
+
+
+
+
+/*carousel*/
+$(".carousel").owlCarousel({
 		loop : true,
+		autoplay:false,
+    	autoplayTimeout:3000,
+    	paginationSpeed : 3000,
+    	goToFirstSpeed : 3000,
+
 		responsive:{
         0:{
-            items:3,
+            items:1,
             nav:true
         }
     },
 // удаляет надпись стрелок вперед-назад
     navText : "",
+		
 
 	});
 
-// менеджер popup
-	$(document).ready(function() {
-	  $('.popup').magnificPopup({type:'image'});
-	  $('.popup_c').magnificPopup();
-	});
-    //скрипт выравнивания содержимое header по высоте экрана
-    //отопражает содержимое без скрола
-	function wResize() {
-		$("header").css("min-height", $(window).height())
-	};
 
-	wResize();
-	$(window).resize(function() {
-		wResize()
-	});
+	/*gallery*/
 
- 	//скрипт tab short
-	//1
+$('.popupImg').magnificPopup({
+  type: 'image'
+  // other options
+});
 
-$(".top_phone .wrapper .tab").click(function() {
-	$(".top_phone .wrapper .tab").removeClass("active").eq($(this).index()).addClass("active");
-	$(".top_phone .tab_item").hide().eq($(this).index()).fadeIn()
-}).eq(0).addClass("active");
+	/*nav bar*/
 
-	//2
-
-$(".tabs_header .wrapper .tab").click(function() {
-	$(".tabs_header .wrapper .tab").removeClass("active").eq($(this).index()).addClass("active");
-	$(".tabs_header .tab_item").hide().eq($(this).index()).fadeIn()
-}).eq(0).addClass("active");
-
-	//3
-$(".contacts_top .tab").click(function() {
-	$(".contacts_top .tab").removeClass("active").eq($(this).index()).addClass("active");
-	$(".s_conracts .tab_item").hide().eq($(this).index()).fadeIn()
-}).eq(0).addClass("active");
-
-//4
-$(".bottom_phone .wrapper .tab").click(function() {
-	$(".bottom_phone .wrapper .tab").removeClass("active").eq($(this).index()).addClass("active");
-	$(".bottom_phone .tab_item").hide().eq($(this).index()).fadeIn()
-}).eq(0).addClass("active");
+/*	$('.header-fix').click(function(){
+ 
+  if ($('#navbar-main').hasClass('affix-top')){
+  	 console.log('Вы нажали на элемент "foo"');
+  	 $('#navbar-main').removeClass('affix');
+  	} else
 
 
+  	 if ($('#navbar-main').hasClass('affix')) {
+
+  	 	console.log(111);
+  		$('#navbar-main').removeClass('affix');
+  		$('#navbar-main').addClass('affix-top');
+  	}
+
+});*/
+
+
+var affixElement = '#navbar-main';
+
+$(affixElement).affix({
+  offset: {
+    // Distance of between element and top page
+    top: function() { return 40; }
+    
+  }
+});
 
 	//Цели для Яндекс.Метрики и Google Analytics
 	$(".count_element").on("click", (function() {
@@ -81,9 +167,7 @@ $(".bottom_phone .wrapper .tab").click(function() {
 
 	//Аякс отправка форм
 	//Документация: http://api.jquery.com/jquery.ajax/
-	$("#form").submit(function(e) {
-		var ths= $(this)
-		e.preventDefault;
+	$("#form").submit(function() {
 		$.ajax({
 			type: "POST",
 			url: "mail.php",
@@ -91,23 +175,51 @@ $(".bottom_phone .wrapper .tab").click(function() {
 		}).done(function() {
 			alert("Спасибо за заявку!");
 			setTimeout(function() {
-				var magnificPopup = $.magnificPopup.instance;
-				magnificPopup.close();
-				ths.trigger("reset");
+				
+				$("#form").trigger("reset");
 			}, 1000);
 		});
 		return false;
 	});
+
+	//Chrome Smooth Scroll
+	try {
+		$.browserSelector();
+		if($("html").hasClass("chrome")) {
+			$.smoothScroll();
+		}
+	} catch(err) {
+
+	};
+
+	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 	
 });
 
-
-// анимация
 $(window).load(function() {
-	$(".top_header").animated("fadeInDown", "fadeOut");
-	$(".tabs_header .wrapper").animated("flipInY", "fadeOut");
-	$(".profi_item").animated("fadeInRight", "fadeOut");
-	$(".s_profi form").animated("zoomInRight", "fadeOut");
-	$(".s_back h3").animated("fadeInUp", "fadeOut");
-	$("footer").animated("fadeInUp", "fadeOut");
+
+	$(".loader_inner").fadeOut();
+	$(".loader").delay(400).fadeOut("slow");
+
+	/*анимация*/
+
+	
+
+});
+
+
+$(window).load(function() {
+/*анимация*/
+
+	$(".tattooLogo, .logo, .header_name, .header_name2").animated("zoomInRight", "fadeOut");
+	$(".titleWork").animated("zoomIn", "fadeOut");
+	$('.master1, .master2, .master3').animated("bounceIn", "fadeOut");
+
+	
+	$('.form-group, .call_order button').animated("zoomInRight", "fadeOut");
+
+	
+	/*$('.master_block').css('opacity','')
+	$('.master_block').removeClass('animated bounceIn' )*/
+
 });
