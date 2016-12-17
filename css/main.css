@@ -2151,3 +2151,17 @@ a.top:hover {
     padding: 0px 22px 0 3px;
     text-align: center;
 }
+
+
+.all_categor .item_img img {
+     -moz-transition: all 1s ease-out;
+     -o-transition: all 1s ease-out;
+     -webkit-transition: all 1s ease-out;
+ }
+
+
+ .all_categor .item_img img:hover{
+     -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+     -o-transform: scale(1.1);
+ }
